@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}My Dossiers{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto mt-10">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-blue-700">My Submitted Dossiers</h2>
+    <a href="/dossiers/new"
+       class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      ➕ Submit New Dossier
+    </a>
+  </div>
+  {% if dossiers %}
+    <table class="w-full bg-white shadow rounded">
+      <thead class="bg-gray-100 text-left text-sm uppercase">
+        <tr>
+          <th class="px-4 py-3">Title</th>
+          <th class="px-4 py-3">Status</th>
+          <th class="px-4 py-3">Submitted On</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dossier in dossiers %}
+        <tr class="border-t hover:bg-gray-50">
+          <td class="px-4 py-2">{{ dossier.title }}</td>
+          <td class="px-4 py-2">{{ dossier.status }}</td>
+          <td class="px-4 py-2">{{ dossier.created_at or 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-gray-600 text-center">You have not submitted any dossiers yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

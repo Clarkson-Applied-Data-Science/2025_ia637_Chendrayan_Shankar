@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+  <!-- Error messages -->
+  {% if obj.errors|length > 0 %}
+    <div class="bg-red-100 text-red-800 p-4 rounded mb-4">
+      {% for error in obj.errors %}
+        <div>{{ error }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Form -->
+  <form action="/admin/users/manage?pkval={{ obj.data[0].user_id }}&action=update" method="POST">
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Name</label>
+      <input type="text" name="name" value="{{ obj.data[0].name }}" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Email</label>
+      <input type="text" name="email" value="{{ obj.data[0].email }}" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Password</label>
+      <input type="password" name="password" value="" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300">
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Retype Password</label>
+      <input type="password" name="password2" value="" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300">
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold mb-1">Role</label>
+      <select name="role" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300">
+        {% for role in obj.roles %}
+          <option value="{{ role.value }}" {% if obj.data[0].role == role.value %}selected{% endif %}>
+            {{ role.text }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="flex justify-between items-center">
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">Submit</button>
+      <a href="/admin/users/manage?pkval={{ obj.data[0].uid }}&action=delete" class="text-red-600 hover:underline">Delete</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

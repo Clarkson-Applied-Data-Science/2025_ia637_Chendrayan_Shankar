@@ -1,0 +1,14 @@
+db:
+  user: 'chendrr'
+  pw: 'MySQL'
+  host: 'mysql.clarksonmsda.org'
+  db: 'chendrr_interfolio'
+  port: 3306
+tables:
+  user: 'users'
+  dossier: dossiers
+  evaluation: evaluations
+  evaluation_stage: evaluation_stages
+  evaluation_comments: evaluation_comments
+  documents: documents
+  stage_reviewers: stage_reviewers

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Welcome, {{ session['user']['name'] }}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="text-lg font-semibold mb-2">Your Dossier</h3>
+        <p class="text-gray-600 text-sm mb-4">Manage your academic profile and materials.</p>
+        <a href="/dossiers/mine" class="inline-block text-blue-600 font-medium hover:underline">View Dossier</a>
+      </div>
+
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="text-lg font-semibold mb-2">Review Tasks</h3>
+        <p class="text-gray-600 text-sm mb-4">Complete and manage your assigned reviews.</p>
+        <a href="/reviews/assigned" class="inline-block text-blue-600 font-medium hover:underline">Go to Reviews</a>
+      </div>
+
+      <!--<div class="bg-white p-6 rounded shadow">
+        <h3 class="text-lg font-semibold mb-2">Documents</h3>
+        <p class="text-gray-600 text-sm mb-4">Upload and organize your supporting documents.</p>
+        <a href="/documents" class="inline-block text-blue-600 font-medium hover:underline">Manage Documents</a>
+      </div>-->
+    </div>
+{% endblock %}

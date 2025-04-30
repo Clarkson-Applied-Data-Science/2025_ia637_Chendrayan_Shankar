@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Create Evaluation{% endblock %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded shadow">
+  <h2 class="text-2xl font-bold mb-6 text-blue-700">Create Evaluation</h2>
+
+  <form method="POST" id="evaluationForm">
+    <div class="mb-6">
+      <label class="block font-medium mb-1">Select Dossier</label>
+      <select name="dossier_id" class="w-full border px-4 py-2 rounded" required>
+        {% for dossier in dossiers %}
+          <option value="{{ dossier.dossier_id }}">{{ dossier.title }} ({{ dossier.name }})</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div id="stages-container">
+      <div class="stage-block mb-6 border-b pb-4" data-index="1">
+        <h3 class="font-semibold text-gray-700 mb-2">Stage 1</h3>
+
+        <label class="block font-medium mb-1">Stage Name</label>
+        <input type="text" name="stage_name_1" class="w-full border px-4 py-2 rounded mb-2" required>
+
+        <label class="block font-medium mb-1">Assign Reviewers</label>
+        <select name="reviewers_1[]" class="w-full border px-4 py-2 rounded" multiple required>
+          {% for reviewer in reviewers %}
+            <option value="{{ reviewer.user_id }}">{{ reviewer.name }}</option>
+          {% endfor %}
+        </select>
+
+        <input type="hidden" name="stage_order_1" value="1">
+      </div>
+    </div>
+
+    <button type="button" onclick="addStage()" class="mb-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+      ➕ Add Stage
+    </button>
+
+    <input type="hidden" id="total_stages" name="total_stages" value="1">
+
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+      Create Evaluation
+    </button>
+  </form>
+</div>
+
+<script>
+let stageCount = 1;
+function addStage() {
+  stageCount++;
+  const container = document.getElementById('stages-container');
+  const newStage = document.createElement('div');
+  newStage.className = "stage-block mb-6 border-b pb-4";
+  newStage.setAttribute('data-index', stageCount);
+  newStage.innerHTML = `
+    <h3 class="font-semibold text-gray-700 mb-2">Stage ${stageCount}</h3>
+
+    <label class="block font-medium mb-1">Stage Name</label>
+    <input type="text" name="stage_name_${stageCount}" class="w-full border px-4 py-2 rounded mb-2" required>
+
+    <label class="block font-medium mb-1">Assign Reviewers</label>
+    <select name="reviewers_${stageCount}[]" class="w-full border px-4 py-2 rounded" multiple required>
+      {% for reviewer in reviewers %}
+        <option value="{{ reviewer.user_id }}">{{ reviewer.name }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="hidden" name="stage_order_${stageCount}" value="${stageCount}">
+  `;
+  container.appendChild(newStage);
+  document.getElementById('total_stages').value = stageCount;
+}
+</script>
+{% endblock %}

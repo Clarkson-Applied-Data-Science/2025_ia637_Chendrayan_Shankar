@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Interfolio{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-white py-4 shadow mb-6">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      
+      <!-- Left: Logo + Title (clickable) -->
+      <a href="/main" class="flex items-center gap-4 hover:opacity-80">
+        <img src="{{ url_for('static', filename='images/clarkson_logo.png') }}"
+             alt="Clarkson Logo" class="h-10">
+        <h1 class="text-xl font-bold text-blue-700">Interfolio</h1>
+      </a>
+  
+      <!-- Right: Logout button -->
+      {% if session.get('user') %}
+      <div>
+        <a href="/logout"
+           class="text-red-600 hover:text-red-800 font-medium text-sm border border-red-600 px-4 py-1.5 rounded">
+          Logout
+        </a>
+      </div>
+      {% endif %}
+  
+    </div>
+  </header>
+  <main class="container mx-auto px-4">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

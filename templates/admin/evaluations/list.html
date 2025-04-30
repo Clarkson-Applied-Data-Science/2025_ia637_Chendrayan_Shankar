@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Evaluation Overview{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto mt-10">
+  <h2 class="text-2xl font-bold text-blue-700 mb-6">Open Evaluations</h2>
+
+  {% if evaluations %}
+    <table class="w-full bg-white shadow rounded">
+      <thead class="bg-gray-100 text-left text-sm uppercase">
+        <tr>
+          <th class="px-4 py-3">Evaluation ID</th>
+          <th class="px-4 py-3">Dossier</th>
+          <th class="px-4 py-3">Faculty</th>
+          <th class="px-4 py-3">Current Stage</th>
+          <th class="px-4 py-3">Reviewer</th>
+          <th class="px-4 py-3">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in evaluations %}
+        <tr class="border-t hover:bg-gray-50">
+          <td class="px-4 py-2">{{ e.evaluation_id }}</td>
+          <td class="px-4 py-2">{{ e.dossier_title }}</td>
+          <td class="px-4 py-2">{{ e.faculty_name }}</td>
+          <td class="px-4 py-2">{{ e.current_stage.stage_name if e.current_stage else 'Complete' }}</td>
+          <td class="px-4 py-2">{{ e.current_stage.reviewer_id if e.current_stage else '—' }}</td>
+          <td class="px-4 py-2">
+            {{ e.current_stage.status if e.current_stage else 'Completed' }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-gray-600 text-center">No evaluations found.</p>
+  {% endif %}
+</div>
+{% endblock %}
