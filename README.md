@@ -89,11 +89,11 @@ FROM evaluations;
 
 ## 📦 SQL Assets Included
 The file chendrr_interfolio.sql contains:
-  ✅ Schema Definitions (CREATE TABLE)
-  ✅ Primary and Foreign Key Constraints
-  ✅ Role Initialization and Permissions
-  ✅ Sample Users and Test Data
-  ✅ Table Relationships and Indexes
+  - ✅ Schema Definitions (CREATE TABLE)
+  - ✅ Primary and Foreign Key Constraints
+  - ✅ Role Initialization and Permissions
+  - ✅ Sample Users and Test Data
+  - ✅ Table Relationships and Indexes
 
 ---
 
