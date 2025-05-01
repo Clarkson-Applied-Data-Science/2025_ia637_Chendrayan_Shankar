@@ -61,3 +61,22 @@ To initialize the database from scratch:
 ```bash
 mysql -u root -p < chendrr_interfolio.sql
 
+---
+
+## 📊 Sample Analytical Queries
+These queries are used for insight generation and reporting within the admin dashboard.
+
+-- 1. Total faculty in each department
+SELECT department, COUNT(*) AS faculty_count
+FROM faculty
+GROUP BY department;
+
+-- 2. Applications pending per reviewer
+SELECT reviewer_id, COUNT(*) AS pending_reviews
+FROM applications
+WHERE status = 'Submitted'
+GROUP BY reviewer_id;
+
+-- 3. Average evaluation turnaround time
+SELECT AVG(DATEDIFF(review_end, review_start)) AS avg_review_time
+FROM evaluations;
