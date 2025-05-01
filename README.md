@@ -42,6 +42,7 @@ Use these users to test submission flows, review cycles, and dashboard functiona
 
 ## 🧱 System Architecture & Components
 
+```bash
 Interfolio_V9/
 ├── Interfolio/                    # Main application package
 │   ├── app.py                     # Flask application entry point
@@ -72,6 +73,8 @@ Interfolio_V9/
 │   │   ├── images/                # University or project logos
 │   │   └── uploads/               # Uploaded user documents (PDFs, resumes)
 │
+```
+
 ---
 
 ## 🗃️ Relational Database Schema
