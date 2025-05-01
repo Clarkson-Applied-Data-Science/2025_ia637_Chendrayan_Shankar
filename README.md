@@ -1,6 +1,6 @@
 # 🎓 Interfolio – Academic Workflow Management Platform
 
-> A full-stack platform built to streamline faculty hiring, evaluations, and academic document processing across higher education institutions.
+> A full-stack platform built to streamline faculty evaluations and academic document processing across higher education institutions.
 
 ---
 
@@ -31,10 +31,10 @@ To test the system across different roles, use the following credentials (all pa
 
 | **Username**     | **Password**   | **User Role** |
 |------------------|----------------|---------------|
-| `admin_user`     | `adminpass`    | Administrator |
-| `faculty_jane`   | `janefac123`   | Faculty       |
-| `reviewer_john`  | `johnrev456`   | Reviewer      |
-| `dean_smith`     | `deanpass789`  | Dean          |
+| `r@r.com`        | `12345`        | Administrator |
+| `c@c.com`        | `12345`        | Faculty       |
+| `a@a.com`        | `12345`        | Reviewer      |
+| `p@p.con`        | `12345`        | Dean          |
 
 Use these users to test submission flows, review cycles, and dashboard functionalities.
 
