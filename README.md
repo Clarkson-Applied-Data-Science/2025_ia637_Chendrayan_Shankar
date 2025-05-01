@@ -98,28 +98,29 @@ The file chendrr_interfolio.sql contains:
 ---
 
 ## 🎯 Features and Highlights
-  📁 Document Submission & Storage for Faculty
-  🗂️ Custom Evaluation Rubrics and Review Forms
-  🔒 Secure Role-based Login
-  📈 Admin Dashboard with Analytics
-  🔄 Dynamic Application Routing Between Reviewers
-  🧾 Reviewer Comments & Final Recommendations
+  - 📁 Document Submission & Storage for Faculty
+  - 🗂️ Custom Evaluation Rubrics and Review Forms
+  - 🔒 Secure Role-based Login
+  - 📈 Admin Dashboard with Analytics
+  - 🔄 Dynamic Application Routing Between Reviewers
+  - 🧾 Reviewer Comments & Final Recommendations
 
 ---
 
 ## 🔐 Security Best Practices
-  ⚠️ Passwords are stored in plain text in demo mode. Use hashed passwords (e.g., bcrypt) in production.
-  CSRF protection is recommended for form submissions
-  JWT or session-based auth can be integrated easily
-  Use role-checks in all backend endpoints
+  - ⚠️ Passwords are stored in plain text in demo mode.
+  - Use hashed passwords (e.g., bcrypt) in production.
+  - CSRF protection is recommended for form submissions
+  - JWT or session-based auth can be integrated easily
+  - Use role-checks in all backend endpoints
 
 ---
 
 ## 🚧 Known Issues & Future Improvements
- Email notification system for status updates
- File upload type and size restrictions
- Full audit trail logging for reviews and comments
- Reviewer reassignment logic improvement
+ - Email notification system for status updates
+ - File upload type and size restrictions
+ - Full audit trail logging for reviews and comments
+ - Reviewer reassignment logic improvement
 
 ---
 
