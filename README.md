@@ -1,4 +1,4 @@
-# 🎓 Interfolio V9 – Academic Workflow Management Platform
+# 🎓 Interfolio – Academic Workflow Management Platform
 
 > A full-stack platform built to streamline faculty hiring, evaluations, and academic document processing across higher education institutions.
 
@@ -13,7 +13,7 @@
 
 ## 📖 Project Overview
 
-**Interfolio V9** replicates a professional academic management platform designed for universities and colleges to manage faculty applications, hiring decisions, tenure evaluations, and activity reporting.
+**Interfolio** replicates a professional academic management platform designed for universities and colleges to manage faculty applications, hiring decisions, tenure evaluations, and activity reporting.
 
 The platform provides role-specific dashboards and document handling systems for:
 - **Faculty members** submitting portfolios and dossiers
@@ -43,7 +43,7 @@ Use these users to test submission flows, review cycles, and dashboard functiona
 ## 🧱 System Architecture & Components
 
 ```bash
-Interfolio_V9/
+Interfolio/
 ├── Interfolio/                    # Main application package
 │   ├── app.py                     # Flask application entry point
 │   ├── baseObject.py              # Base class for SQLAlchemy models
