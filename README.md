@@ -86,3 +86,43 @@ SELECT AVG(DATEDIFF(review_end, review_start)) AS avg_review_time
 FROM evaluations;
 
 ---
+
+## 📦 SQL Assets Included
+The file chendrr_interfolio.sql contains:
+  ✅ Schema Definitions (CREATE TABLE)
+  ✅ Primary and Foreign Key Constraints
+  ✅ Role Initialization and Permissions
+  ✅ Sample Users and Test Data
+  ✅ Table Relationships and Indexes
+
+---
+
+## 🎯 Features and Highlights
+  📁 Document Submission & Storage for Faculty
+  🗂️ Custom Evaluation Rubrics and Review Forms
+  🔒 Secure Role-based Login
+  📈 Admin Dashboard with Analytics
+  🔄 Dynamic Application Routing Between Reviewers
+  🧾 Reviewer Comments & Final Recommendations
+
+---
+
+## 🔐 Security Best Practices
+  ⚠️ Passwords are stored in plain text in demo mode. Use hashed passwords (e.g., bcrypt) in production.
+  CSRF protection is recommended for form submissions
+  JWT or session-based auth can be integrated easily
+  Use role-checks in all backend endpoints
+
+---
+
+## 🚧 Known Issues & Future Improvements
+ Email notification system for status updates
+ File upload type and size restrictions
+ Full audit trail logging for reviews and comments
+ Reviewer reassignment logic improvement
+
+---
+
+## 📄 License
+  This project is open-sourced under the MIT License.
+  Feel free to fork and enhance!
