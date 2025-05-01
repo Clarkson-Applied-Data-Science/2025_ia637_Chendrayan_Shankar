@@ -57,9 +57,13 @@ The database follows a normalized relational model covering entities like:
 
 > 📌 Refer to `docs/ERD.png` for the complete **Entity-Relationship Diagram (ERD)**.
 
+---
+
 To initialize the database from scratch:
 ```bash
 mysql -u root -p < chendrr_interfolio.sql
+
+```
 
 ---
 
@@ -80,3 +84,5 @@ GROUP BY reviewer_id;
 -- 3. Average evaluation turnaround time
 SELECT AVG(DATEDIFF(review_end, review_start)) AS avg_review_time
 FROM evaluations;
+
+---
