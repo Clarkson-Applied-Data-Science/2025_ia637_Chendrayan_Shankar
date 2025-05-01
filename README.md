@@ -80,17 +80,18 @@ Interfolio/
 ## 🗃️ Relational Database Schema
 
 The database follows a normalized relational model covering entities like:
-- Users and Roles
-- Applications
-- Departments
-- Evaluation Reports
-- Reviewer Assignments
+- Users
+- Dossiers
+- Evaluations
+- Evaluation_stages
+- Stage_reviewers
+- Evaluation_comments
+- Documents
 
 ![image](https://github.com/user-attachments/assets/089197a9-3928-4bca-911f-7e35d5b30c9c)
 
 ```bash
 mysql -u root -p < chendrr_interfolio.sql
-
 ```
 
 ---
