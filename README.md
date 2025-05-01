@@ -99,28 +99,28 @@ mysql -u root -p < chendrr_interfolio.sql
 ## 📊 Sample Analytical Queries
 These queries are used for insight generation and reporting within the admin dashboard.
 
--- 1. 📑 Total Dossiers Submitted per User
+1. 📑 Total Dossiers Submitted per User
 ```bash
 SELECT user_id, COUNT(*) AS total_dossiers
 FROM dossiers
 GROUP BY user_id;
 ```
 
--- 2. 📄 Dossiers and Their Current Status
+2. 📄 Dossiers and Their Current Status
 ```bash
 SELECT dossier_id, title, status, created_at
 FROM dossiers
 ORDER BY created_at DESC;
 ```
 
--- 3. 📂 List of Documents Uploaded per Reviewer
+3. 📂 List of Documents Uploaded per Reviewer
 ```bash
 SELECT reviewer_id, COUNT(*) AS total_documents
 FROM documents
 GROUP BY reviewer_id;
 ```
 
--- 4. 🧾 Evaluation Count and Completion Rate
+4. 🧾 Evaluation Count and Completion Rate
 ```bash
 SELECT 
   COUNT(*) AS total_evaluations,
@@ -129,7 +129,7 @@ SELECT
 FROM evaluations;
 ```
 
--- 5. 🧠 Most Active Reviewers (By Document Uploads)
+5. 🧠 Most Active Reviewers (By Document Uploads)
 ```bash
 SELECT reviewer_id, COUNT(*) AS uploads
 FROM documents
@@ -138,7 +138,7 @@ ORDER BY uploads DESC
 LIMIT 5;
 ```
 
--- 6. 🧮 Average Time to Complete Evaluations
+6. 🧮 Average Time to Complete Evaluations
 ```bash
 SELECT 
   AVG(TIMESTAMPDIFF(DAY, started_at, completed_at)) AS avg_days_to_complete
@@ -146,7 +146,7 @@ FROM evaluations
 WHERE completed_at IS NOT NULL;
 ```
 
--- 7. 💬 Number of Comments by Each Reviewer (Commenter)
+7. 💬 Number of Comments by Each Reviewer (Commenter)
 ```bash
 SELECT commenter_id, COUNT(*) AS comment_count
 FROM evaluation_comments
@@ -154,7 +154,7 @@ GROUP BY commenter_id
 ORDER BY comment_count DESC;
 ```
 
--- 8. 📋 Dossiers with Evaluations but No Comments
+8. 📋 Dossiers with Evaluations but No Comments
 ```bash
 SELECT d.dossier_id, d.title
 FROM dossiers d
@@ -163,7 +163,7 @@ LEFT JOIN evaluation_comments c ON e.evaluation_id = c.stage_id
 WHERE c.comment_id IS NULL;
 ```
 
--- 9. 📥 Document Upload Timeline
+9. 📥 Document Upload Timeline
 ```bash
 SELECT DATE(uploaded_at) AS upload_date, COUNT(*) AS uploads
 FROM documents
@@ -171,7 +171,7 @@ GROUP BY upload_date
 ORDER BY upload_date DESC;
 ```
 
--- 10. 🧾 Evaluation Status Breakdown
+10. 🧾 Evaluation Status Breakdown
 ```bash
 SELECT status, COUNT(*) AS count
 FROM evaluations
