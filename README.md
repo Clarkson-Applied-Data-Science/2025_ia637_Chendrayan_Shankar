@@ -42,8 +42,36 @@ Use these users to test submission flows, review cycles, and dashboard functiona
 
 ## 🧱 System Architecture & Components
 
-The system is divided into the following core components:
-
+Interfolio_V9/
+├── Interfolio/                    # Main application package
+│   ├── app.py                     # Flask application entry point
+│   ├── baseObject.py              # Base class for SQLAlchemy models
+│   ├── config.yml                 # Configuration settings (database, session)
+│
+│   ├── models/                    # SQLAlchemy ORM models
+│   │   ├── documents.py
+│   │   ├── dossier.py
+│   │   ├── evaluation.py
+│   │   ├── evaluation_comments.py
+│   │   ├── evaluation_stage.py
+│   │   ├── stage_reviewers.py
+│   │   ├── user.py
+│
+│   ├── templates/                 # HTML templates for rendering pages
+│   │   ├── base.html              # Base layout
+│   │   ├── index.html             # Homepage
+│   │   ├── login.html             # Login form
+│   │   ├── register.html          # User registration
+│   │   ├── dossiers_*             # Faculty dossier handling
+│   │   ├── reviews_*              # Review workflows
+│   │   └── admin/                 # Admin dashboard templates
+│       └── evaluations/           # Evaluation setup and list templates
+│
+│   ├── static/                    # CSS, uploads, and branding
+│   │   ├── style.css              # Custom styles
+│   │   ├── images/                # University or project logos
+│   │   └── uploads/               # Uploaded user documents (PDFs, resumes)
+│
 ---
 
 ## 🗃️ Relational Database Schema
@@ -121,9 +149,3 @@ The file chendrr_interfolio.sql contains:
  - File upload type and size restrictions
  - Full audit trail logging for reviews and comments
  - Reviewer reassignment logic improvement
-
----
-
-## 📄 License
-  This project is open-sourced under the MIT License.
-  Feel free to fork and enhance!
