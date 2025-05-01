@@ -88,10 +88,6 @@ The database follows a normalized relational model covering entities like:
 
 ![image](https://github.com/user-attachments/assets/089197a9-3928-4bca-911f-7e35d5b30c9c)
 
-
----
-
-To initialize the database from scratch:
 ```bash
 mysql -u root -p < chendrr_interfolio.sql
 
