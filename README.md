@@ -86,7 +86,8 @@ The database follows a normalized relational model covering entities like:
 - Evaluation Reports
 - Reviewer Assignments
 
-> 📌 Refer to `docs/ERD.png` for the complete **Entity-Relationship Diagram (ERD)**.
+![image](https://github.com/user-attachments/assets/089197a9-3928-4bca-911f-7e35d5b30c9c)
+
 
 ---
 
